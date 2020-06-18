@@ -78,7 +78,7 @@ model.fit(X_train, y_train,
           epochs=epochs,
           verbose=1)
 
-model.save_weights("model_weights3.h5")
-model.save("model3.h5")
+model.save_weights("model_weights_cnn_svm.h5")
+model.save("model_cnn_svm.h5")
 print(datetime.datetime.now())
 

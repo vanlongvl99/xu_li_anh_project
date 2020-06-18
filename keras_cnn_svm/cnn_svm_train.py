@@ -7,7 +7,7 @@ from keras.models import Model
 from sklearn.model_selection import train_test_split
 import joblib
 
-filename = 'finalized_model_linear.sav'
+filename = 'finalized_model_svm.sav'
 
 
 label_names = {'Speed_limit_(60km_h)': 0, 'ahead_only': 1, 'Speed_limit_(80km_h)': 2, 'Speed_limit_(30km_h)': 3, '40_km_h': 4, 'traffic_signal': 5, 'Speed_limit_(70km_h)': 6, 'road_work': 7, 'turn_left_ahead': 8, 'Speed_limit_(20km_h)': 9, 'stop': 10, 'no_entry': 11, 'turn_right_ahead': 12, 'Speed_limit_(50km_h)': 13}
@@ -25,8 +25,8 @@ x_data.append(image)
 x_data = np.array(x_data)
 # y_labels = np.array(y_labels)
 
-model_cnn = load_model('model3.h5')
-model_cnn.load_weights('model_weights3.h5')
+model_cnn = load_model('model_cnn_svm.h5')
+model_cnn.load_weights('model_weights_cnn_svm.h5')
 model_cnn.summary()
 
 layer_name = 'flatten_1'

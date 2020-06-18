@@ -1,4 +1,4 @@
-import numpy as np 
+2   import numpy as np 
 import cv2
 from keras.models import Sequential
 from keras.layers import Dense, Dropout, Flatten
@@ -77,7 +77,7 @@ model.fit(X_train, y_train,
           epochs=epochs,
           verbose=1)
 
-model.save_weights("model_weights2.h5")
-model.save("model2.h5")
+model.save_weights("model_weights_cnn.h5")
+model.save("model_cnn.h5")
 print(datetime.datetime.now())
 

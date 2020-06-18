@@ -27,8 +27,8 @@ print(label_names)
 
 #SVM
 #load the trained model to classify sign
-model_cnn_svm = load_model("./model3.h5")
-model_cnn_svm.load_weights("./model_weights3.h5")
+model_cnn_svm = load_model("./model_cnn_svm.h5")
+model_cnn_svm.load_weights("./model_weights_cnn_svm.h5")
 layer_name = 'flatten_1'
 layer_dict = dict([(layer.name, layer) for layer in model_cnn_svm.layers])
 model_feature = Model(inputs=model_cnn_svm.inputs, outputs=layer_dict[layer_name].output)

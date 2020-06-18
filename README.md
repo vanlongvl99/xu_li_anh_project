@@ -1,5 +1,6 @@
 # Nhận diện biển báo giao thông
 ## Sau khi `clone` thư mục về máy, ta di chuyển và thư mục `model_github` và thao tác tại thư mục đó.
+Tải các file pre-train mode [tại đây](https://drive.google.com/drive/folders/10Ah7g_cmHsk7TqbWVuFZifQ4s4PcRbS2?usp=sharing)
 ## I. Nhận diện sử dụng Convolution Neural Network
 **Yêu cầu:** Sử dụng python3
 1. Để train lại model ta dùng lệnh `python3 keras_main.py`.

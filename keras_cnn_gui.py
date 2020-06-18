@@ -14,8 +14,8 @@ from keras.models import load_model
 path = "dataset"
 cnt = 0
 #load the trained model to classify sign
-model = load_model("./model2.h5")
-model.load_weights("./model_weights2.h5")
+model = load_model("./model_cnn.h5")
+model.load_weights("./model_weights_cnn.h5")
 #dictionary to label all traffic signs class.
 label_names = {}
 for forder_name in listdir(path):
