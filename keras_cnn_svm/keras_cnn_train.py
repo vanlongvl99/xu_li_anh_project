@@ -40,7 +40,7 @@ for forder_name in listdir(path):
 # prepare data
 x_data = np.array(x_data)
 y_labels = np.array(y_labels)
-X_train, X_test, y_train, y_test = train_test_split(x_data, y_labels, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(x_data, y_labels, test_size=0.05)
 print(X_train.shape, X_test.shape, y_train.shape, y_test.shape)
 print("============")
 from sklearn.preprocessing import LabelBinarizer
@@ -63,6 +63,8 @@ model.add(Conv2D(64, (3, 3), activation='relu'))
 model.add(MaxPooling2D(pool_size=(2, 2)))
 model.add(Conv2D(128, (3, 3), activation='relu'))
 model.add(Conv2D(128, (3, 3), activation='relu'))
+model.add(Conv2D(128, (3, 3), activation='relu'))
+model.add(Conv2D(128, (3, 3), activation='relu'))
 model.add(Flatten())
 model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.5))
@@ -78,7 +80,7 @@ model.fit(X_train, y_train,
           epochs=epochs,
           verbose=1)
 
-model.save_weights("model_weights_cnn_svm.h5")
-model.save("model_cnn_svm.h5")
+model.save_weights("model_weights_cnn_svm_1.h5")
+model.save("model_cnn_svm_1.h5")
 print(datetime.datetime.now())
 

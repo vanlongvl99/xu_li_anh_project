@@ -33,7 +33,7 @@ layer_name = 'flatten_1'
 layer_dict = dict([(layer.name, layer) for layer in model_cnn_svm.layers])
 model_feature = Model(inputs=model_cnn_svm.inputs, outputs=layer_dict[layer_name].output)
 model_feature.summary()
-filename = 'finalized_model_linear.sav'
+filename = 'finalized_model_svm_1.sav'
 loaded_model_SVM = joblib.load(filename)
 
 
