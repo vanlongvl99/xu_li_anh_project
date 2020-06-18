@@ -9,7 +9,7 @@ from os import listdir
 from sklearn.model_selection import train_test_split
 import datetime
 
-path = "../dataset"
+path = "dataset"
 
 # set label names from PC
 cnt = 0

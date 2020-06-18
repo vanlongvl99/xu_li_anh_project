@@ -15,7 +15,7 @@ import joblib
 
 
 
-path = "../dataset"
+path = "dataset"
 cnt = 0
 label_names = {}
 for forder_name in listdir(path):

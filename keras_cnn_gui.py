@@ -14,11 +14,10 @@ from keras.models import load_model
 path = "dataset"
 cnt = 0
 #load the trained model to classify sign
-model = load_model("/home/vanlong/vanlong/ky6/XuLyAnh/cNN_model/model2.h5")
-model.load_weights("/home/vanlong/vanlong/ky6/XuLyAnh/cNN_model/model_weights2.h5")
+model = load_model("./model2.h5")
+model.load_weights("./model_weights2.h5")
 #dictionary to label all traffic signs class.
 label_names = {}
-# label_names = {'Speed_limit_(60km_h)': 0, 'ahead_only': 1, 'Speed_limit_(80km_h)': 2, 'Speed_limit_(30km_h)': 3, '40_km_h': 4, 'traffic_signal': 5, 'Speed_limit_(70km_h)': 6, 'road_work': 7, 'turn_left_ahead': 8, 'Speed_limit_(20km_h)': 9, 'duong_1_chieu': 10, 'stop': 11, 'no_entry': 12, 'turn_right_ahead': 13, 'Speed_limit_(50km_h)': 14}
 for forder_name in listdir(path):
     label_names[cnt] = forder_name
     cnt += 1
