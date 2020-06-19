@@ -14,8 +14,8 @@ from keras.models import load_model
 path = "dataset"
 cnt = 0
 #load the trained model to classify sign
-model = load_model("./model_cnn_svm_1.h5")
-model.load_weights("./model_weights_cnn_svm_1.h5")
+model = load_model("./model_cnn_1.h5")
+model.load_weights("./model_weights_cnn_1.h5")
 #dictionary to label all traffic signs class.
 label_names = {}
 for forder_name in listdir(path):
@@ -36,28 +36,22 @@ def classify(file_path):
     print("")
     image = cv2.imread(file_path)
     image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)   
-
     image = np.array(image)
-    # image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-     
     image = (image/255)   
     print(image.shape)        #normalize
     image = cv2.resize(image, (32, 32))
     image = [image]
     image = np.array(image)
-    # image = tf.reshape()
     print(image.shape,"\n")
     prediction = model.predict(image)[0]
     k_max_pro = 3
-    visualize(label_names,prediction, k_max_pro)
+    # visualize(label_names,prediction, k_max_pro)
     print("len:",len(prediction))
     print(prediction)
     print("max:",np.argmax(prediction))
     for i in range(len(prediction)):
         print(label_names[i] + ':',prediction[i] )
-    # print(prediction)
     max_index = int(np.argmax(prediction))
-
     label.configure(foreground='#011638', text="Your traffic sign is " + label_names[max_index]) 
 
 def show_classify_button(file_path):
@@ -79,20 +73,16 @@ def upload_image():
 
 def visualize(label_names, prediction_1,k):
     global label_packed
-
     index_labels = np.argpartition(prediction_1, -k)[-k:]
     max_label_names = []
     proba_classes = prediction_1[index_labels]
-
     for i in range(len(index_labels)):
         max_label_names.append(label_names[index_labels[i]])
     # k max prediction
     x = np.arange(len(index_labels))  # the label locations
     width = 0.35  # the width of the bars
     fig, ax = plt.subplots()
-    # rects1 = ax.bar(x - width/2, men_means, width, label='Men')
     print(proba_classes)
-    
     rects2 = ax.bar(x + width/2, proba_classes, width, label='Your classes')
     # Add some text for labels, title and custom x-axis tick labels, etc.
     ax.set_ylabel('probability')
