@@ -13,14 +13,14 @@ path = "dataset"
 
 # set label names from PC
 cnt = 0
-label_to_indices = {}
+label_to_indexes = {}
 for forder_name in listdir(path):
-    label_to_indices[forder_name] = cnt
+    label_to_indexes[forder_name] = cnt
     cnt += 1
-print(label_to_indices)
+print(label_to_indexes)
 
 #dictionary to label all traffic signs class.
-# label_to_indices = {'Speed_limit_(60km_h)': 0, 'ahead_only': 1, 'Speed_limit_(80km_h)': 2, 'Speed_limit_(30km_h)': 3, '40_km_h': 4, 'traffic_signal': 5, 'Speed_limit_(70km_h)': 6, 'road_work': 7, 'turn_left_ahead': 8, 'Speed_limit_(20km_h)': 9, 'duong_1_chieu': 10, 'stop': 11, 'no_entry': 12, 'turn_right_ahead': 13, 'Speed_limit_(50km_h)': 14}
+# label_to_indexes = {'Speed_limit_(60km_h)': 0, 'ahead_only': 1, 'Speed_limit_(80km_h)': 2, 'Speed_limit_(30km_h)': 3, '40_km_h': 4, 'traffic_signal': 5, 'Speed_limit_(70km_h)': 6, 'road_work': 7, 'turn_left_ahead': 8, 'Speed_limit_(20km_h)': 9, 'duong_1_chieu': 10, 'stop': 11, 'no_entry': 12, 'turn_right_ahead': 13, 'Speed_limit_(50km_h)': 14}
 
 # pre-processing data
 y_labels = []
@@ -31,7 +31,7 @@ for forder_name in listdir(path):
         image = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)   
         image = (image/255)        
         image = cv2.resize(image, (32, 32))
-        y_labels.append(label_to_indices[forder_name])
+        y_labels.append(label_to_indexes[forder_name])
         x_data.append(image)
 
 # prepare data
